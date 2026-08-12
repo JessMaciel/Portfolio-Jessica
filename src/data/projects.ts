@@ -28,7 +28,7 @@ export const projects: Project[] = [
   technologies: ['HTML5', 'CSS3'],
   
   github: 'https://github.com/JessMaciel/Projeto-Doce-Encanto',
-  demo: '',
+  demo: 'https://jessmaciel.github.io/Projeto-Doce-Encanto/',
 },
 
   {
@@ -39,8 +39,8 @@ export const projects: Project[] = [
     description:
       'Portfolio profissional desenvolvido com React e TypeScript para apresentar minha experiência, competências e projetos.',
     technologies: ['React', 'TypeScript', 'HTML5','CSS3'],
-    
-    demo: '',
+    github: 'https://github.com/JessMaciel/Portfolio-Jessica',
+    demo: 'https://portfolio-jessica-seven.vercel.app/',
   },
 
   {
