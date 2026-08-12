@@ -580,28 +580,23 @@ h2::after {
   font-size: 0.95rem;
 }
 
+
 /* PROJECTS */
 
 #projects {
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 #projects > button {
-  position: absolute;
-
-  top: 3rem;
-  right: 3rem;
+  align-self: center; /* Or 'flex-end' if you prefer it aligned to the right */
+  margin-top: 2rem;
 
   background: transparent;
-
   border: 1px solid var(--borda);
-
   color: var(--cor-texto);
-
-  padding: 0.5rem 1rem;
-
+  padding: 0.6rem 1.5rem;
   border-radius: 8px;
-
   cursor: pointer;
 
   transition:
@@ -613,13 +608,11 @@ h2::after {
 
 #projects > button:hover {
   border-color: var(--cor-roxa);
-
   color: var(--cor-roxa);
-
   transform: translateY(-2px);
-
   box-shadow: var(--shadow-roxo);
 }
+
 
 .projects-grid {
   display: grid;
@@ -1180,13 +1173,9 @@ h2::after {
   .projects-grid {
     grid-template-columns: 1fr;
   }
-
-  #projects > button {
-    position: static;
-
+#projects > button {
     width: 100%;
-
-    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   .form {
