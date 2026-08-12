@@ -42,16 +42,26 @@ export const projects: Project[] = [
     github: 'https://github.com/JessMaciel/Portfolio-Jessica',
     demo: 'https://portfolio-jessica-seven.vercel.app/',
   },
+ {
+  id: 4,
+  title: 'Senac Bootstrap',
+  description:
+    'Projeto acadêmico desenvolvido durante o curso de Programação Web do SENAC, com foco na criação de interfaces responsivas utilizando Bootstrap e seu sistema de grid e componentes.',
+  technologies: ['HTML5', 'CSS3', 'Bootstrap'],
+  github: 'https://github.com/JessMaciel/Senac-Bootstrap',
+  demo: 'https://senac-bootstrap.vercel.app/',
+  image: ''/images/senac-bootstrap.png'',
+},
 
   {
-    id: 4,
+    id: 5,
     title: 'CV Eletrônico',
     description:
       'Currículo digital desenvolvido como aplicação web para apresentar experiência profissional, formação e competências de forma interativa.',
     technologies: ['React', 'TypeScript', 'CSS3'],
     github: '',
     demo: '',
-  },
+  }
 ]
 
 export default projects
