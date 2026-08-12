@@ -31,43 +31,63 @@ async function handleSubmit(
     return
   }
 
+  setSending(true)
+  setError('')
+  setSubmitted(false)
+
+  const controller = new AbortController()
+
+  const timeout = setTimeout(() => {
+    controller.abort()
+  }, 10000)
+
   try {
-    setSending(true)
-    setError('')
+    const response = await fetch(
+      'YOUR-GOOGLE-APPS-SCRIPT-URL',
+      {
+        method: 'POST',
 
-const response = await fetch(
-  'https://script.google.com/macros/s/AKfycbw0RbUPh7OZvwxDT6MS2fSjZ9lvfHG2y1uSX1RZOfxfrDkw8ggeIHa-Qqj-3AibARSQcQ/exec',
-  {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'text/plain;charset=utf-8',
-    },
-    body: JSON.stringify({
-      name,
-      email,
-      message,
-    }),
-  }
-)
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
 
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
 
+        signal: controller.signal,
+      }
+    )
 
     if (!response.ok) {
       throw new Error('Erro ao enviar mensagem')
     }
-const data = await response.json()
 
-if (!data.success) {
-  throw new Error('Erro ao enviar mensagem')
-}
+    const data = await response.json()
+
+    if (!data.success) {
+      throw new Error(data.error || 'Erro ao enviar mensagem')
+    }
+
     setSubmitted(true)
+
     setName('')
     setEmail('')
     setMessage('')
-  } catch {
-    setError('Não foi possível enviar a mensagem.')
+
+  } catch (error) {
+    console.error(error)
+
+    setError(
+      'Não foi possível enviar a mensagem. Tente novamente.'
+    )
+
     setSubmitted(false)
+
   } finally {
+    clearTimeout(timeout)
     setSending(false)
   }
 }
