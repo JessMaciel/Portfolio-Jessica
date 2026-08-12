@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
 import type { Project } from '../types/project'
 
@@ -56,26 +57,29 @@ function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </article>
 
-      {imageOpen && project.image && (
-        <div
-          className="image-modal"
-          onClick={() => setImageOpen(false)}
-        >
-          <button
-            className="image-modal-close"
+      {imageOpen &&
+        project.image &&
+        createPortal(
+          <div
+            className="image-modal"
             onClick={() => setImageOpen(false)}
-            aria-label="Fechar imagem"
           >
-            <X size={28} />
-          </button>
+            <button
+              className="image-modal-close"
+              onClick={() => setImageOpen(false)}
+              aria-label="Fechar imagem"
+            >
+              <X size={26} />
+            </button>
 
-          <img
-            src={project.image}
-            alt={`Prévia ampliada do projeto ${project.title}`}
-            onClick={(event) => event.stopPropagation()}
-          />
-        </div>
-      )}
+            <img
+              src={project.image}
+              alt={`Prévia ampliada do projeto ${project.title}`}
+              onClick={(event) => event.stopPropagation()}
+            />
+          </div>,
+          document.body
+        )}
     </>
   )
 }
