@@ -266,11 +266,12 @@ textarea:focus-visible {
 .hero-text {
   max-width: 600px;
 }
+
 .hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+}
 
 .hero-image img {
   width: 450px;
@@ -278,6 +279,7 @@ textarea:focus-visible {
   border-radius: 50%;
   box-shadow: 1px 5px 11px 0 var(--cor-amarelo);
 }
+
 .hero-image img:hover {
   transform: scale(1.1);
 }
@@ -303,11 +305,13 @@ textarea:focus-visible {
   color: var(--cor-amarelo);
   margin-bottom: 1.5rem;
 }
-.hero h5{
+
+.hero h5 {
   margin-top: 0.5rem;
   color: var(--cor-texto-mutado);
   font-weight: 100;
 }
+
 .hero p {
   font-size: 1.125rem;
   color: var(--cor-texto-mutado);
@@ -660,6 +664,8 @@ h2::after {
   margin-bottom: 0.75rem;
 }
 
+/* IMG PROJECTS ZOOM */
+
 .project-image {
   width: 100%;
 
@@ -670,6 +676,8 @@ h2::after {
   border-radius: 8px;
 
   margin-bottom: 1.25rem;
+
+  cursor: zoom-in;
 
   transition:
     transform 0.45s cubic-bezier(.2,.8,.2,1),
@@ -738,75 +746,77 @@ h2::after {
   transform: translateX(5px);
 }
 
-/*IMG PROJECTS ZOOM*/
-.project-image {
-  cursor: zoom-in;
-}
-
-
 /* IMAGE MODAL */
 
 .image-modal {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  padding: 2rem;
+  padding: 4rem 2rem 2rem;
 
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(6px);
 
   cursor: zoom-out;
-
-  animation: modalFade 0.25s ease;
 }
 
-
 .image-modal img {
+  display: block;
+
   width: auto;
-  max-width: 90vw;
-  max-height: 90vh;
+  height: auto;
+
+  max-width: min(1200px, 92vw);
+  max-height: 85vh;
 
   object-fit: contain;
 
-  border-radius: 12px;
+  border-radius: 10px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 
   cursor: default;
-
-  animation: imageZoom 0.25s ease;
 }
 
-
 .image-modal-close {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
+  position: fixed;
+
+  top: 1.5rem;
+  right: 1.5rem;
+
+  z-index: 100000;
+
+  width: 46px;
+  height: 46px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 45px;
-  height: 45px;
+  padding: 0;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(20, 20, 20, 0.8);
   color: white;
 
-  cursor: pointer;
-}
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
 
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
 
 .image-modal-close:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--cor-roxa);
+  transform: scale(1.08);
 }
-
 
 @keyframes modalFade {
   from {
@@ -817,7 +827,6 @@ h2::after {
     opacity: 1;
   }
 }
-
 
 @keyframes imageZoom {
   from {
@@ -877,6 +886,7 @@ h2::after {
   width: 100%;
   max-width: none;
 }
+
 .form-group label {
   color: var(--cor-texto-mutado);
 
@@ -1033,7 +1043,6 @@ h2::after {
 /* RESPONSIVE */
 
 @media (max-width: 1024px) {
- 
   .hero-image img {
     width: min(360px, 100%);
   }
@@ -1042,17 +1051,35 @@ h2::after {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 992px) {
   .hero-content {
     flex-direction: column-reverse;
     gap: 3rem;
   }
 }
+
 @media (max-width: 768px) {
+  .image-modal {
+    padding: 4.5rem 1rem 1rem;
+  }
+
+  .image-modal img {
+    max-width: 95vw;
+    max-height: 82vh;
+  }
+
+  .image-modal-close {
+    top: 1rem;
+    right: 1rem;
+
+    width: 42px;
+    height: 42px;
+  }
+
   .desktop-menu {
     display: none;
   }
-
 
   .mobile-menu-button {
     display: flex;
@@ -1127,8 +1154,6 @@ h2::after {
   .mobile-theme-toggle {
     margin-top: 1rem;
   }
-
-
 
   .hero {
     min-height: auto;
