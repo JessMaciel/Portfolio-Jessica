@@ -59,7 +59,7 @@ export const projects: Project[] = [
       'Versão web responsiva do meu currículo profissional, desenvolvida com Bootstrap 5 para apresentar experiência, formação e competências em uma interface adaptável a diferentes dispositivos.',
     technologies: ['HTML5', 'CSS3', 'Bootstrap'],
     github: 'https://github.com/JessMaciel/CV-Online',
-    demo: 'https://cv-online-8ue3chnh2-jessica-maciel.vercel.app/',
+    demo: 'https://cv-online-ten-sandy.vercel.app/',
   },
 ]
 
