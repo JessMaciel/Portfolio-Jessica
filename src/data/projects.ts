@@ -52,14 +52,17 @@ export const projects: Project[] = [
   },
 
   {
-    id: 5,
-    title: 'CV Eletrônico',
-    description:
-      'Currículo digital desenvolvido como aplicação web para apresentar experiência profissional, formação e competências de forma interativa.',
-    technologies: ['React', 'TypeScript', 'CSS3'],
-    github: '',
-    demo: '',
-  },
+
+  {
+  id: 5,
+  title: 'CV Eletrônico',
+  image: '/images/cv-eletronico.png',
+  description:
+    'Versão web responsiva do meu currículo profissional, desenvolvida com Bootstrap 5 para apresentar experiência, formação e competências em uma interface adaptável a diferentes dispositivos.',
+  technologies: ['HTML5', 'CSS3', 'Bootstrap'],
+  github: 'https://github.com/JessMaciel/CV-Online',
+  demo: 'https://cv-online-8ue3chnh2-jessica-maciel.vercel.app/',
+},
 ]
 
 export default projects
