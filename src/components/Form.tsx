@@ -43,7 +43,7 @@ async function handleSubmit(
 
   try {
     const response = await fetch(
-      'YOUR-GOOGLE-APPS-SCRIPT-URL',
+      'https://script.google.com/macros/s/AKfycbw0RbUPh7OZvwxDT6MS2fSjZ9lvfHG2y1uSX1RZOfxfrDkw8ggeIHa-Qqj-3AibARSQcQ/exec',
       {
         method: 'POST',
 
