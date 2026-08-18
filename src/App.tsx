@@ -25,9 +25,10 @@ function App() {
       <About
         id="about"
       />
+       <Projects id="projects" />
 <Skills id="skills" />
 <Experience id="experience" />
-      <Projects id="projects" />
+     
       <Form id="contact" />
 
       <Footer />

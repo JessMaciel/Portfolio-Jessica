@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 import type { Project } from '../types/project'
 
 type ProjectCardProps = {
@@ -10,21 +11,25 @@ type ProjectCardProps = {
 function ProjectCard({ project }: ProjectCardProps) {
   const [imageOpen, setImageOpen] = useState(false)
 
+  const { t } = useLanguage()
+
+  const projectText = t.projects.items[project.id]
+
   return (
     <>
       <article className="project-card">
-        <h3>{project.title}</h3>
+        <h3>{projectText.title}</h3>
 
         {project.image && (
           <img
             src={project.image}
-            alt={`Prévia do projeto ${project.title}`}
+            alt={`${t.projects.preview} ${projectText.title}`}
             className="project-image"
             onClick={() => setImageOpen(true)}
           />
         )}
 
-        <p>{project.description}</p>
+        <p>{projectText.description}</p>
 
         <div className="technologies">
           {project.technologies.map((tech) => (
@@ -41,7 +46,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub
+              {t.projects.github}
             </a>
           )}
 
@@ -51,7 +56,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Ver projeto
+              {t.projects.viewProject}
             </a>
           )}
         </div>
@@ -67,14 +72,14 @@ function ProjectCard({ project }: ProjectCardProps) {
             <button
               className="image-modal-close"
               onClick={() => setImageOpen(false)}
-              aria-label="Fechar imagem"
+              aria-label={t.projects.closeImage}
             >
               <X size={26} />
             </button>
 
             <img
               src={project.image}
-              alt={`Prévia ampliada do projeto ${project.title}`}
+              alt={`${t.projects.enlargedPreview} ${projectText.title}`}
               onClick={(event) => event.stopPropagation()}
             />
           </div>,

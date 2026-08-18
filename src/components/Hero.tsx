@@ -1,40 +1,48 @@
+import { useLanguage } from '../context/LanguageContext'
+
 type HeroProps = {
   id: string
   name: string
-  title: string
-  description: string
 }
 
 function Hero({
   id,
-  name,
-  title,
-  description
+  name
 }: HeroProps) {
+
+  const { t } = useLanguage()
+
   return (
     <section id={id} className="hero">
 
       <div className="hero-content">
+
         <div className="hero-text">
-          <span className="hero-intro">Olá, eu sou</span>
+
+          <span className="hero-intro">
+            {t.hero.greeting}
+          </span>
 
           <h1>{name}</h1>
 
-          <h2>{title}</h2>
+          <h2>{t.hero.title}</h2>
 
-          <p>{description}</p>
-          <h5>Disponivel para oportunidades presenciais ou remotas</h5>
+          <p>{t.hero.description}</p>
+
+          <h5>{t.hero.availability}</h5>
 
           <div className="hero-actions">
+
             <a href="#projects" className="btn-primario">
-              Ver projetos
+              {t.hero.projectsButton}
             </a>
 
             <a href="#contact" className="btn-secundario">
-              Entrar em contato
+              {t.hero.contactButton}
             </a>
+
           </div>
-          
+
         </div>
 
         <div className="hero-image">
@@ -43,6 +51,7 @@ function Hero({
             alt="Jessica Maciel"
           />
         </div>
+
       </div>
 
     </section>

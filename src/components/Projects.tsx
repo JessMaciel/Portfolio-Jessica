@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ProjectCard from './ProjectCard'
 import projects from '../data/projects'
+import { useLanguage } from '../context/LanguageContext'
 
 type ProjectProps = {
   id: string
@@ -8,13 +9,14 @@ type ProjectProps = {
 
 function Projects({ id }: ProjectProps) {
   const [showAll, setShowAll] = useState(false)
+  const { t } = useLanguage()
 
   return (
     <section id={id}>
-      <h2>Meus Projetos</h2>
+      <h2>{t.projects.title}</h2>
 
       <button onClick={() => setShowAll(!showAll)}>
-        {showAll ? 'Ver Menos' : 'Ver Todos'}
+        {showAll ? t.projects.showLess : t.projects.showAll}
       </button>
 
       <div className="projects-grid">

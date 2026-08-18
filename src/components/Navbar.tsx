@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Menu, X, Sun, Moon } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [lightTheme, setLightTheme] = useState(false)
+  const { t, language, setLanguage } = useLanguage()
 
   function toggleTheme() {
     setLightTheme(!lightTheme)
@@ -22,13 +24,36 @@ function Navbar() {
       </div>
 
       <div className="desktop-menu">
-        <a href="#home">Início</a>
-        <a href="#about">Sobre</a>
-        <a href="#projects">Projetos</a>
-        <a href="#skills">Competências</a>
-        <a href="#experience">Experiência</a>
-        <a href="#contact">Contato</a>
+     
 
+        <a href="#home">{t.navbar.home}</a>
+<a href="#about">{t.navbar.about}</a>
+<a href="#skills">{t.navbar.skills}</a>
+<a href="#experience">{t.navbar.experience}</a>
+<a href="#projects">{t.navbar.projects}</a>
+<a href="#contact">{t.navbar.contact}</a>
+<div className="language-switcher">
+  <button
+    className={language === 'pt' ? 'active' : ''}
+    onClick={() => setLanguage('pt')}
+  >
+    PT
+  </button>
+
+  <button
+    className={language === 'en' ? 'active' : ''}
+    onClick={() => setLanguage('en')}
+  >
+    EN
+  </button>
+
+  <button
+    className={language === 'fr' ? 'active' : ''}
+    onClick={() => setLanguage('fr')}
+  >
+    FR
+  </button>
+</div>
         <button
           className="theme-toggle"
           onClick={toggleTheme}
@@ -48,28 +73,49 @@ function Navbar() {
       </button>
 
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <div className="language-switcher">
+  <button
+    className={language === 'pt' ? 'active' : ''}
+    onClick={() => setLanguage('pt')}
+  >
+    PT
+  </button>
+
+  <button
+    className={language === 'en' ? 'active' : ''}
+    onClick={() => setLanguage('en')}
+  >
+    EN
+  </button>
+   <button
+    className={language === 'fr' ? 'active' : ''}
+    onClick={() => setLanguage('fr')}
+  >
+    FR
+  </button>
+</div>
         <a href="#home" onClick={() => setMenuOpen(false)}>
-          Início
+         {t.navbar.home}
         </a>
 
         <a href="#about" onClick={() => setMenuOpen(false)}>
-          Sobre
+          {t.navbar.about}
         </a>
 
         <a href="#skills" onClick={() => setMenuOpen(false)}>
-          Competências
+          {t.navbar.skills}
         </a>
 
         <a href="#experience" onClick={() => setMenuOpen(false)}>
-          Experiência
+          {t.navbar.experience}   
         </a>
 
         <a href="#projects" onClick={() => setMenuOpen(false)}>
-          Projetos
+          {t.navbar.projects}
         </a>
 
         <a href="#contact" onClick={() => setMenuOpen(false)}>
-          Contato
+          {t.navbar.contact}
         </a>
 
         <button

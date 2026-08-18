@@ -155,8 +155,43 @@ textarea:focus-visible {
   font-size: 1.25rem;
   color: var(--cor-texto);
 }
+/*Translation Menu*/
+.language-switcher {
+  display: flex;
+  gap: 0.35rem;
+}
 
-/* MENU PRINCIPAL INICIO */
+.language-switcher button {
+  background: transparent;
+  border: 1px solid var(--borda);
+  color: var(--cor-texto-mutado);
+
+  padding: 0.35rem 0.55rem;
+
+  border-radius: 6px;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.language-switcher button:hover {
+  color: var(--cor-texto);
+  border-color: var(--cor-roxa);
+}
+
+.language-switcher button.active {
+  background: var(--cor-roxa);
+  border-color: var(--cor-roxa);
+  color: white;
+}
+/* MENU PRINCIPAL FIM */
 /* DESKTOP MENU INICIO*/
 
 .desktop-menu {
@@ -502,6 +537,11 @@ h2::after {
   color: var(--cor-texto-mutado);
 
   margin-bottom: 1.25rem;
+}
+
+.about-availability {
+  color: var(--cor-roxa) !important;
+  font-weight: 600;
 }
 
 /* SOBRE FIM */

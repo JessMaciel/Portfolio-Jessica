@@ -1,10 +1,12 @@
+import { useLanguage } from '../context/LanguageContext'
 function Footer() {
+  const { t } = useLanguage()
   const currentYear = new Date().getFullYear()
 
   return (
     <footer className="footer">
       <p>
-        © {currentYear} Jessica Maciel. Todos os direitos reservados.
+        © {currentYear} Jessica Maciel. {t.footer.allRightsReserved}
       </p>
 
       <div className="footer-links">
@@ -25,7 +27,7 @@ function Footer() {
         </a>
 
         <a href="#home">
-          Voltar ao topo
+          {t.footer.backToTop}
         </a>
       </div>
     </footer>
