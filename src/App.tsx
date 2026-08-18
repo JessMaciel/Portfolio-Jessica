@@ -18,8 +18,6 @@ function App() {
       <Hero
         id="home"
         name="Jessica Maciel"
-        title="Desenvolvedora Web & Front-End"
-        description="Crio experiências digitais que unem código, design e usabilidade."
       />
 
       <About

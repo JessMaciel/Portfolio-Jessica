@@ -30,6 +30,7 @@ function Hero({
           <p>{t.hero.description}</p>
 
           <h5>{t.hero.availability}</h5>
+        
 
           <div className="hero-actions">
 

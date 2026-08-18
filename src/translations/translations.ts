@@ -14,6 +14,8 @@ export const translations = {
       title: 'Desenvolvedora Web & Front-End',
       description:
         'Crio experiências digitais que unem código, design e usabilidade.',
+        availability:
+      'Disponível para oportunidades remotas',
       projectsButton: 'Ver projetos',
       contactButton: 'Entrar em contato',
     },
@@ -34,6 +36,8 @@ export const translations = {
 
   paragraph4:
     'Minha experiência combina pensamento visual, experiência do usuário e código, permitindo transformar ideias em interfaces funcionais, intuitivas e responsivas.',
+    availability:
+  'Disponível para oportunidades remotas',
 },
 
 skills: {
@@ -158,6 +162,8 @@ footer: {
       title: 'Web & Front-End Developer',
       description:
         'I create digital experiences that combine code, design and usability.',
+        availability:
+      'Canadian citizen • Authorized to work in Canada • Open to remote opportunities',
       projectsButton: 'View projects',
       contactButton: 'Get in touch',
     },
@@ -304,6 +310,8 @@ footer: {
       title: 'Développeuse web et front-end',
       description:
         'Je crée des expériences numériques alliant code, design et ergonomie.',
+        availability:
+      'Citoyenne canadienne • Autorisée à travailler au Canada • Ouverte aux opportunités en télétravail',
       projectsButton: 'Voir les projets',
       contactButton: 'Contactez-moi',
     },
